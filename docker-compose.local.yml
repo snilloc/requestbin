@@ -1,0 +1,22 @@
+version: "3.2"
+
+services:
+  app:
+    image: "snilloc/requestbin:${TAG}"
+    container_name: "requestbin"
+    environment:
+      REALM: prod
+      REDIS_URL: "//redis:6379"
+    links:
+    - redis
+    ports:
+    - "8000:8000"
+
+  redis:
+    image: redis
+    container_name: "redis"
+    volumes:
+    - "cache_data:/data"
+
+volumes:
+  cache_data:
