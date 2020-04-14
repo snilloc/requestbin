@@ -1,4 +1,4 @@
-# We have discontinued the publicly hosted version of RequestBin due to ongoing abuse that made it very difficult to keep the site up reliably. Please see instructions below for setting up your own self-hosted instance.
+### We have discontinued the publicly hosted version of RequestBin due to ongoing abuse that made it very difficult to keep the site up reliably. Please see instructions below for setting up your own self-hosted instance.
 
 Originally Created by [Jeff Lindsay](http://progrium.com)
 
@@ -41,13 +41,16 @@ It will push to Heroku and give you a URL that your own private RequestBin will 
 On the server/machine you want to host this, you'll first need a machine with
 docker and docker-compose installed, then grab the RequestBin source using git:
 
-`$ git clone git://github.com/Runscope/requestbin.git`
+`$ git clone git://github.com/snilloc/requestbin.git`
 
 Go into the project directory and then build and start the containers
 
 ```
-$ sudo docker-compose build
-$ sudo docker-compose up -d
+### Build Local Docker Image with auto increment version
+$ sudo ./build.sh 
+
+### Run RequestBin 
+$ sudo ./runRequestBin
 ```
 
 Your own private RequestBin will be running on this server.
