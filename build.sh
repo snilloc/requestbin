@@ -9,9 +9,9 @@ cat version
 # the release number should match build.sbt version number
 source ./version
 
-#DOCKER_IMAGE_TAG="${MAJOR_VERSION}.${MINOR_VERSION}.${PATCH_VERSION}-${BUILD_VERSION}"
-DOCKER_IMAGE_TAG="${MAJOR_VERSION}.${MINOR_VERSION}.${PATCH_VERSION}"
-
+DOCKER_REGISTRY_NAME="snilloc"
+DOCKER_IMAGE_APP_NAME="requestbin"
+DOCKER_IMAGE_TAG="${TAG}"
 
 # Build the base_os image using cache if possible
 # Do this in a sub-dir that's empty to keep it as light as possible
