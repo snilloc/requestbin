@@ -1,62 +1,42 @@
-### We have discontinued the publicly hosted version of RequestBin due to ongoing abuse that made it very difficult to keep the site up reliably. Please see instructions below for setting up your own self-hosted instance.
+# RequestBin
 
 Originally Created by [Jeff Lindsay](http://progrium.com)
-
-License
--------
-MIT
-
-
-Looking to self-host?
-=====================
-
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
-## Deploy your own instance using Heroku
-Create a Heroku account if you haven't, then grab the RequestBin source using git:
-
-`$ git clone git://github.com/Runscope/requestbin.git`
-
-From the project directory, create a Heroku application:
-
-`$ heroku create`
-
-Add Heroku's redis addon:
-
-`$ heroku addons:add heroku-redis`
-
-Set an environment variable to indicate production:
-
-`$ heroku config:set REALM=prod`
-
-Now just deploy via git:
-
-`$ git push heroku master`
-
-It will push to Heroku and give you a URL that your own private RequestBin will be running.
-
-
-## Deploy your own instance using Docker
-
-On the server/machine you want to host this, you'll first need a machine with
-docker and docker-compose installed, then grab the RequestBin source using git:
-
-`$ git clone git://github.com/snilloc/requestbin.git`
-
-Go into the project directory and then build and start the containers
-
-```
-### Build Local Docker Image with auto increment version
-$ sudo ./build.sh 
-
-### Run RequestBin 
-$ sudo ./runRequestBin
-```
-
-Your own private RequestBin will be running on this server.
-
 
 Contributors
 ------------
  * Barry Carlyon <barry@barrycarlyon.co.uk>
  * Jeff Lindsay <progrium@gmail.com>
+
+License
+-------
+MIT
+
+Version
+-------
+2.0.9 - The latest requestbin with better support for deploying and running in docker.  Currently using python 2.7
+
+3.x.x - Future development with python 3
+
+## Deploy your own instance using Docker
+
+`$ git clone git://github.com/snilloc/requestbin.git`
+
+
+### Build Local Docker Image with auto increment TAG
+```$ sudo ./build.sh ```
+
+### Run RequestBin
+
+#### By Script
+```
+$ sudo ./runRequestBin
+```
+
+#### Command Line
+```
+sudo docker run -d -p "5000:5000" snilloc/requestbin:2.0.9
+```
+
+## Note Original RequestBin
+#### We have discontinued the publicly hosted version of RequestBin due to ongoing abuse that made it very difficult to keep the site up reliably. Please see instructions above for setting up your own self-hosted instance.
+
